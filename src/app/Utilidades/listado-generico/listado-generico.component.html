@@ -1,0 +1,22 @@
+@if (!Listado) {
+   <span #cargando>
+    <ng-content select="[cargando]"></ng-content>
+   </span>
+   @if (!cargando.innerHTML.trim()) {
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/09b24e31234507.564a1d23c07b4.gif">
+   }    
+    }
+    
+    @if (Listado?.length ===0) {
+<span #vacio>
+    <ng-content select="[vacio]"></ng-content>
+</span>
+@if (!vacio.innerHTML.trim()) {
+    <p>No hay películas para mostrar</p>
+}
+    }
+    
+    
+    @if (Listado && Listado.length >0) {
+<ng-content select="[contenido]"></ng-content>
+    }

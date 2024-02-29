@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+
+
+<input type="text" (input)="title = $event.target.value"/>
+
+
+<input type="checkbox" (change)="ocultar=!ocultar" name="" id="">
+
+@if (ocultar) {
+<app-ciclo-de-vida [titulo]="title"></app-ciclo-de-vida>
+}
+<!--
+<app-rating [maximoRating]="15" (rated)="manejarRated($event)"></app-rating>
+
+<input type="file" style="display: none;" #cargador>
+
+<button (click)="cargador.click()">Cargar Archivo</button>
+
+-->
+
+<div class="Contenedor"> 
+<p>Peliculas 1</p>
+<app-listado-peliculas [peliculas] = "peliculasEncine"></app-listado-peliculas>
+
+
+
+<p>Peliculas 2</p>
+<app-listado-peliculas [peliculas] = "PeliculasExtrenos"></app-listado-peliculas>
+
+</div>

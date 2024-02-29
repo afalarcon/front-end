@@ -1,0 +1,22 @@
+
+
+
+<app-listado-generico [Listado]="peliculas">
+<ng-container vacio>
+    <div>Mensaje Personalizado, <table style="border: 1px;"></table></div>
+</ng-container>
+
+    <ng-container contenido>
+@for (item of peliculas; track $index) {
+    <div class="Contenedor">
+      Pelicula {{item.Id}} {{item.titulo}} <button style="border: 2px; padding: auto;" (click)="remover($index)">Remover</button>  <br>
+      {{item.fechaLanzamieneto | date }}
+    </div>
+    }
+
+
+
+
+    </ng-container>
+ 
+</app-listado-generico>
